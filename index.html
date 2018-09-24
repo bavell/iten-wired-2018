@@ -7,7 +7,7 @@
 		<title>reveal.js</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/theme/league.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -24,8 +24,102 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>
+					<h1>Cloud Infrastructure with <span class="cwt-blue">Kubernetes</span></h1>
+					<h3>Who, How, Why and When?</h3>
+
+					<small>Ben Avellone / <a href="https://coastware.tech" target='_blank'>Coastware Technologies</a></small>
+				</section>
+				<section>
+						<h1>Agenda</h1>
+						<ul>
+							<li>Introduction
+								<ul>
+									<li>Coastware Technologies</li>
+									<li>Building Blocks</li>
+								</ul>
+							</li>
+							<li>Architecture
+								<ul>
+									<li>Cluster</li>
+									<li>Node</li>
+								</ul>
+							</li>
+						</ul>
+						<ul>
+							<li>Concepts
+									<ul>
+										<li>Core</li>
+										<li>Network</li>
+										<li>Storage</li>
+										<li>Configuration</li>
+										<li>Authentication</li>
+									</ul>
+								</li>
+						</ul>
+					</section>
+				<section data-background-image='img/logo_final.png' data-background-size='contain' data-background-opacity='0.05'>
+					<section>
+						<h1><span class='cwt-blue'> Coastware Technologies</span></h1>
+						<p>Founded in 2016, adopted Kubenetes in early 2017</p>
+						<p>Single developer, limited time & resources</p>
+						<p>Kubernetes now managing all of Coastware's web services (20+ web servers & databases)</p>
+						<p>Kubernetes provides logging, monitoring, automatic backups & more</p>
+					</section>
+				</section>
+				<section>
+					<section data-transition='fade'>
+						<h2>Building Blocks: <span class='cwt-blue'>Containers</span></h2>
+						<blockquote>Containers are a great way to package and run applications.</blockquote>
+						<ul>
+							<li>Contains all libraries and code needed by application</li>
+							<li>Less overhead and lower start-up time than VMs</li>
+							<li>Easy to compose and replace</li>
+						</ul>
+					</section>
+					<section data-transition='fade'>
+						<h2>Building Blocks: <span class="cwt-blue">Container Deployment</span></h2>
+						<blockquote>Once we have our application packaged up into a container, how do we run it?</blockquote>
+						<ul>
+							<li class='fragment'>Option 1: Manual - Humans</li>
+							<li class='fragment'>Option 2: Automated - Scripts</li>
+							<li class='fragment'>Option 3: Automated - Orchestration Tool</li>
+						</ul>
+					</section>
+					<section data-transition='fade'>
+						<h2>Container Deployment: <span class="cwt-blue">Humans</span></h2>
+						<blockquote>SSH into machines and run containers manually using Docker.</blockquote>
+						<p><strong>Pros: </strong> simple - minimal tooling, configuration and setup required</p>
+						<p><strong>Cons: </strong> not automated, error-prone, doesn't scale, problems require manual troubleshooting</p>
+					</section>
+					<section data-transition='fade'>
+						<h2>Container Deployment: <span class="cwt-blue">Scripts</span></h2>
+						<blockquote>Custom scripts or tools like Puppet & Chef to run containers on multiple machines</blockquote>
+
+						<div class='row'><strong>Pros: </strong> integrates with existing infrastructure, reproducible, auditable</div>
+						<div class='row'><strong>Cons: </strong> manual placement of containers on machines, still doesn't scale well, not easy to move to new infrastructure </div>
+					</section>
+					<section data-transition='fade'>
+						<h2>Container Deployment: <span class="cwt-blue">Orchestration</span></h2>
+						<blockquote>Orchestrator takes care of running containers onto machines which have spare capacity</blockquote>
+
+						<div class='row'><strong>Pros: </strong> automated, self-healing, scalable, portable</div>
+						<div class='row'><strong>Cons: </strong> some overhead, learning curve, new tooling</div>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Kubernetes: An Introduction</h2>
+
+						<p>Kubernetes is an open-source system for automating deployment, scaling, and management of containerized applications.</p>
+						<ul>
+							<li class="fragment">Open-source</li>
+							<li class="fragment">Automates Deployment, Scaling & Management</li>
+							<li class="fragment">Containerized Applications</li>
+						</ul>
+					</section>
+				</section>
 			</div>
 		</div>
 

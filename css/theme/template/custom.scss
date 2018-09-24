@@ -1,0 +1,46 @@
+// Custom styles for k8s presentation
+
+$cwt-blue:#43c0f6;
+$k8s-blue:#326de6;
+
+.reveal {
+  .cwt-blue {
+    color: $cwt-blue;
+  }
+  
+  .k8s-blue {
+    color: $k8s-blue;
+  }
+  
+  h1 {
+    .cwt-blue {
+      text-shadow: 0 5px 0 darken($cwt-blue, 40%), 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 20px 20px rgba(0,0,0,.15);
+    }
+    .k8s-blue {
+      text-shadow: 0 5px 0 darken($k8s-blue, 40%), 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 20px 20px rgba(0,0,0,.15);
+    }
+  }
+  
+  a {
+    color: $cwt-blue;
+
+    &:hover {
+      color: lighten($cwt-blue, 10%);
+    }
+  }
+
+  blockquote.quoted:before {
+		content: '\201C';
+	}
+	blockquote.quoted:after {
+		content: '\201D';
+  }
+  
+  .row {
+    margin-top:1em;
+    & + .row {
+      
+    }
+  }
+}
+
