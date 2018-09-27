@@ -4,7 +4,7 @@ $cwt-blue:#43c0f6;
 $k8s-blue:#326de6;
 
 .reveal {
-  .cwt-blue {
+  .cwt-blue, strong {
     color: $cwt-blue;
   }
   
@@ -29,6 +29,10 @@ $k8s-blue:#326de6;
     }
   }
 
+  blockquote {
+    width:80%;
+  }
+
   blockquote.quoted:before {
 		content: '\201C';
 	}
@@ -38,9 +42,22 @@ $k8s-blue:#326de6;
   
   .row {
     margin-top:1em;
-    & + .row {
-      
-    }
+  }
+
+  .split {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .smaller {
+    font-size:0.9em;
+  }
+
+  .left {
+    text-align: left;
+  }
+  .right {
+    text-align: right;
   }
 }
 

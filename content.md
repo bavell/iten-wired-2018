@@ -6,6 +6,11 @@
 - Managers / Executives
 - Students
 
+## Personas
+- Manager / Team Lead / Executive
+- IT Technician / System Administrator
+- Developer / Programmer
+
 # Intro to K8s
 
 - What is it?
@@ -14,10 +19,15 @@
   
 - Who uses it?
 - What problems does it solve?
-
+  - For 
 
 # Architecture
 - Based around containers
 - Master node and workers nodes
 - Can be deployed in pure cloud, bare-metal or hybrid setup
 - 
+
+
+
+How many managers/team leads/executives are present? Developers/programmers? IT Professionals/Sys Admins?
+

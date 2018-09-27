@@ -28,44 +28,108 @@
 					<h1>Cloud Infrastructure with <span class="cwt-blue">Kubernetes</span></h1>
 					<h3>Who, How, Why and When?</h3>
 
-					<small>Ben Avellone / <a href="https://coastware.tech" target='_blank'>Coastware Technologies</a></small>
+					<small>Ben Avellone // CEO // <a href="https://coastware.tech" target='_blank'>Coastware Technologies</a></small>
+
+					<aside class="notes">
+							Hello and welcome to, "Cloud Infrastructure with Kubernetes: Who, How, Why and When?"
+
+							My name is Ben Avellone and my goal today is to introduce you to Kubernetes and leave you with enough knowledge that you feel confident exploring more resources on your own.
+					</aside>
+				</section>
+				<!-- <section>
+					<h1>Overview</h1>
+					<ul>
+						<li>Introduction
+							<ul>
+								<li>Coastware Technologies</li>
+								<li>Motivation & Building Blocks</li>
+							</ul>
+						</li>
+						<li>Architecture
+							<ul>
+								<li>Cluster</li>
+								<li>Node</li>
+							</ul>
+						</li>
+					</ul>
+					<ul>
+						<li>Concepts
+								<ul>
+									<li>Core</li>
+									<li>Network</li>
+									<li>Storage</li>
+									<li>Configuration</li>
+									<li>Authentication</li>
+								</ul>
+							</li>
+					</ul>
+				</section> -->
+				<section data-background-image='img/logo_final.png' data-background-size='contain' data-background-opacity='0.05'>
+					<h1><span class='cwt-blue'> Coastware Technologies</span></h1>
+					<ul>
+						<li>Founded in 2016, provides business-class software applications and comprehensive IT services</li>
+						<li>Limited time & resources to spend on infrastructure</li>
+						<li>Adopted Kubenetes in early 2017, now managing all of Coastware's web services (60+ containers)</li>
+					</ul>
+
+					<aside class="notes">
+						As the CEO, CTO and Lead Software Architect at Coastware Technologies, I need tools that let me utilize my available resources as efficiently as possible. Time is often the biggest limiting factor.
+
+						Kubernetes lets us solve infrastructure problems quickly, it provides a lot of power and flexibility out-of-the-box.
+					</aside>
 				</section>
 				<section>
-						<h1>Agenda</h1>
-						<ul>
-							<li>Introduction
-								<ul>
-									<li>Coastware Technologies</li>
-									<li>Building Blocks</li>
-								</ul>
-							</li>
-							<li>Architecture
-								<ul>
-									<li>Cluster</li>
-									<li>Node</li>
-								</ul>
-							</li>
-						</ul>
-						<ul>
-							<li>Concepts
-									<ul>
-										<li>Core</li>
-										<li>Network</li>
-										<li>Storage</li>
-										<li>Configuration</li>
-										<li>Authentication</li>
-									</ul>
-								</li>
-						</ul>
-					</section>
-				<section data-background-image='img/logo_final.png' data-background-size='contain' data-background-opacity='0.05'>
+					<h1>What is <span class="cwt-blue">Kubernetes</span>?</h1>
+					<blockquote>Open source container orchestration platform</blockquote>
+					<p>Initially built inside Google based on Borg and Omega - Google's internal systems that power search, video and advertising services</p>
+					<p>Designed as a collection of <strong>loosely-coupled</strong> components to deploy, scale and maintain containers</p>
+
+					<aside class="notes">
+					</aside>
+				</section>
+
+				<section>
 					<section>
-						<h1><span class='cwt-blue'> Coastware Technologies</span></h1>
-						<p>Founded in 2016, adopted Kubenetes in early 2017</p>
-						<p>Single developer, limited time & resources</p>
-						<p>Kubernetes now managing all of Coastware's web services (20+ web servers & databases)</p>
-						<p>Kubernetes provides logging, monitoring, automatic backups & more</p>
+						<h2>Problems <span class="cwt-blue">Kubernetes</span> aims to solve</h2>
+						<ul>
+							<li class='fragment'>Applications and machines crash; the more you have the more often it will happen</li>
+							<li class='fragment'>Distributed systems are powerful and can solve many problems but are difficult to manage</li>
+							<li class="fragment">Homegrown infrastructure management solutions are often brittle and cumbersome</li>
+						</ul>
+						<aside class="notes">
+								Problems we face today when running a business application for internal or external use. // 
+
+								If an application crashes or fails for any reason, Kubernetes will automatically restart it. If the machine an application is running on crashes, Kubernetes will restart the application on another machine in the cluster. // 
+
+								K8s makes simple things easy and complicated things possible. It provides a set of concepts abstractions that are designed to simplify distributed system management. // 
+
+								K8s abstracts away the underlying infrastructure and provides a single HTTP API to manage it. Multiple levels of integration with k8s are possible.
+							</aside>
 					</section>
+					<section>
+						<h2><span class="cwt-blue">Kubernetes</span> Use Cases</h2>
+						<ul>
+							<li class='fragment'>Make sure an application is <strong>always available</strong></li>
+							<li class='fragment'>Simultaneously run <strong>multiple versions</strong> of an application and <strong>multiple copies</strong> of each version</li>
+							<li class='fragment'>Scale an application <strong>automatically</strong> based on load</li>
+						</ul>
+						<aside class="notes">
+							Cluster admin can tell k8s to run N replicas behind a load balancer. Each replica can be geographically distributed for maximum availability.
+							
+							TODO
+	
+							Kubernetes can automatically scale an application based on CPU usage or the amount of traffic it receives.
+						</aside>
+					</section>
+				</section>
+				<section>
+					
+				</section>
+				<section>
+					<h1>Why Kubernetes?</h1>
+					<p class='fragment'><strong>Wide industry adoption:</strong> Comcast, IBM, Ebay, Phillips, Niantic (Pokemon GO)</p>
+					<p class='fragment'><strong>Huge Community:</strong> 1800+ contributors and 40k+ stars on GitHub</p>
+					<p class='fragment'>Use a <strong>single API</strong> to manage your infrastructure regardless of physical location (on-prem, co-located, cloud provider)</p>
 				</section>
 				<section>
 					<section data-transition='fade'>
@@ -101,7 +165,7 @@
 					</section>
 					<section data-transition='fade'>
 						<h2>Container Deployment: <span class="cwt-blue">Orchestration</span></h2>
-						<blockquote>Orchestrator takes care of running containers onto machines which have spare capacity</blockquote>
+						<blockquote>Orchestrator takes care of running containers on machines which have spare capacity</blockquote>
 
 						<div class='row'><strong>Pros: </strong> automated, self-healing, scalable, portable</div>
 						<div class='row'><strong>Cons: </strong> some overhead, learning curve, new tooling</div>
