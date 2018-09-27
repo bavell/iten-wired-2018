@@ -44,6 +44,11 @@ $k8s-blue:#326de6;
     margin-top:1em;
   }
 
+  .skinny {
+    width:80%;
+    margin:auto;
+  }
+
   .split {
     display: flex;
     justify-content: space-between;
@@ -58,6 +63,10 @@ $k8s-blue:#326de6;
   }
   .right {
     text-align: right;
+  }
+
+  small {
+    font-size: 0.8em;
   }
 }
 

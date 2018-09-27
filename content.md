@@ -31,3 +31,12 @@
 
 How many managers/team leads/executives are present? Developers/programmers? IT Professionals/Sys Admins?
 
+
+# Slides
+- Title
+- CWT
+- What is Kubernetes?
+- Problems & Use Cases
+- Why Kubernetes?
+- Building Blocks
+- Architecture
