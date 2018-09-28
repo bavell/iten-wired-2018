@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Cloud Infrastructure with Kubernetes</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/league.css">
@@ -31,9 +31,8 @@
 					<small>Ben Avellone // CEO // <a href="https://coastware.tech" target='_blank'>Coastware Technologies</a></small>
 
 					<aside class="notes">
-							Hello and welcome to, "Cloud Infrastructure with Kubernetes: Who, How, Why and When?"
-
-							My name is Ben Avellone and my goal today is to introduce you to Kubernetes and leave you with enough knowledge that you feel confident exploring more resources on your own.
+						<p>Hello and welcome to, "Cloud Infrastructure with Kubernetes: Who, How, Why and When?"</p>
+						<p>My name is Ben Avellone and my goal today is to introduce you to Kubernetes and leave you with enough knowledge that you feel confident exploring more resources on your own.</p>
 					</aside>
 				</section>
 				<section data-background-image='img/logo_final.png' data-background-size='contain' data-background-opacity='0.05'>
@@ -45,25 +44,28 @@
 					</ul>
 
 					<aside class="notes">
-						As the CEO, CTO and Lead Software Architect at Coastware Technologies, I need tools that let me utilize my available resources as efficiently as possible. Time is often the biggest limiting factor.
-
-						Kubernetes lets us solve infrastructure problems quickly, it provides a lot of power and flexibility out-of-the-box.
+						<p>First a little background on myself and my company, Coastware Technologies.</p>
+						<p>As the CEO, CTO and Lead Software Architect at Coastware Technologies, I need tools that let me utilize my available resources as efficiently as possible. Time is often the biggest limiting factor.</p>
+						<p>Kubernetes lets us solve infrastructure problems quickly, it provides a lot of power and flexibility out-of-the-box.</p>
 					</aside>
 				</section>
 
 				<section>
 					<section>
 						<h1>What is <span class="cwt-blue">Kubernetes</span>?</h1>
-						<blockquote>Open source container orchestration platform</blockquote>
-						<p>Initially built inside Google based on Borg and Omega - Google's internal systems that power search, video and advertising services</p>
-						<p>Designed as a collection of <strong>loosely-coupled</strong> components to deploy, scale and maintain containers</p>
+						<blockquote>"Pilot/Helmsman" in Greek</blockquote>
+						<p>Initially built inside Google based on <strong>Borg and Omega</strong> - Google's internal systems that power search, video and advertising services</p>
+						<p>Set of <strong>tools, concepts and APIs</strong> designed to deploy, scale and maintain containers running on a cluster of machines</p>
 					</section>
 
 					<section>
-						<h1>Why Kubernetes?</h1>
-						<p class='fragment'><strong>Wide industry adoption:</strong> Comcast, IBM, Ebay, Phillips</p>
-						<p class='fragment'><strong>Huge Community:</strong> 1800+ contributors and 40k+ stars on GitHub</p>
-						<p class='fragment'>Use a <strong>single API</strong> to manage your infrastructure regardless of physical location (on-prem, co-located, cloud provider)</p>
+						<h2>Building Blocks: <span class='cwt-blue'>Containers</span></h2>
+						<blockquote>Containers are a great way to package and run applications.</blockquote>
+						<ul>
+							<li>Contains all libraries and code needed by application</li>
+							<li>Less overhead and lower start-up time than VMs</li>
+							<li>Easy to compose and replace</li>
+						</ul>
 					</section>
 
 					<section data-transition='fade'>
@@ -75,13 +77,10 @@
 							<li class="fragment">Homegrown infrastructure management solutions are often brittle and cumbersome</li>
 						</ul>
 						<aside class="notes">
-								Developer problems // 
-
-								If an application crashes or fails for any reason, Kubernetes will automatically restart it. If the machine an application is running on crashes, Kubernetes will restart the application on another machine in the cluster. // 
-
-								K8s makes simple things easy and complicated things possible. It provides a set of concepts abstractions that are designed to simplify distributed system management. // 
-
-								K8s abstracts away the underlying infrastructure and provides a single HTTP API to manage it. Along with other benefits, this makes standardization easier and simplifies hiring and training.
+								<p>Developer problems</p>
+								<p>If an application crashes or fails for any reason, Kubernetes will automatically restart it. If the machine an application is running on crashes, Kubernetes will restart the application on another machine in the cluster.</p>
+								<p>K8s makes simple things easy and complicated things possible. It provides a set of concepts abstractions that are designed to simplify distributed system management.</p>
+								<p>K8s abstracts away the underlying infrastructure and provides a single HTTP API to manage it. Along with other benefits, this makes standardization easier and simplifies hiring and training.</p>
 							</aside>
 					</section>
 
@@ -91,12 +90,12 @@
 						<ul>
 							<li class='fragment'>Scaling infrastructure can be a slow, error-prone and manual process</li>
 							<li class='fragment'>Staff needs to be on-call 24/7 to respond to inevitable crisis at 3am</li>
-							<li class='fragment'>...<br/><br/></li>
+							<li class='fragment'>Legacy infrastructure and applications can't be modified in-place<br/></li>
 						</ul>
 						<aside class="notes">
-								IT problems //
+							Whats are some problems faced in operations that Kubernetes helps solve?
 
-							</aside>
+						</aside>
 					</section>
 
 					<section data-transition='fade'>
@@ -104,8 +103,6 @@
 						<blockquote>Manager / Team Lead / Executive</blockquote>
 						<ul>
 							<li class='fragment'>Hiring and training staff on homegrown infrastructure is difficult and expensive</li>
-							<li class='fragment'>...<br/><br/></li>
-							<li class='fragment'>...<br/><br/></li>
 						</ul>
 						<aside class="notes">
 							Business problems // 
@@ -113,7 +110,18 @@
 					</section>
 
 					<section>
-						<h2><span class="cwt-blue">Kubernetes</span> Use Cases</h2>
+						<h1>Why Kubernetes?</h1>
+						<p class='fragment'><strong>Wide industry adoption:</strong> Comcast, IBM, Ebay, Phillips</p>
+						<p class='fragment'><strong>Huge Community:</strong> 1800+ contributors and 40k+ stars on GitHub</p>
+						<p class='fragment'>Use a <strong>single API</strong> to manage your infrastructure regardless of physical location (on-prem, co-located, cloud provider)</p>
+
+						<aside class="notes">
+							What are some reasons Kubernetes stands apart from other solutions?
+						</aside>
+					</section>
+
+					<section>
+						<h2><span class="cwt-blue">Kubernetes</span> Use Case Examples</h2>
 						<ul>
 							<li class='fragment'>Make sure an application is <strong>always available</strong></li>
 							<li class='fragment'>Simultaneously run <strong>multiple versions</strong> of an application and <strong>multiple copies</strong> of each version</li>
@@ -131,16 +139,6 @@
 
 				<section>
 					<section data-transition='fade'>
-						<h2>Building Blocks: <span class='cwt-blue'>Containers</span></h2>
-						<blockquote>Containers are a great way to package and run applications.</blockquote>
-						<ul>
-							<li>Contains all libraries and code needed by application</li>
-							<li>Less overhead and lower start-up time than VMs</li>
-							<li>Easy to compose and replace</li>
-						</ul>
-					</section>
-
-					<section data-transition='fade'>
 						<h2>Building Blocks: <span class="cwt-blue">Deployment</span></h2>
 						<blockquote>Once we have our application packaged up into a container, how do we run it?</blockquote>
 						<ul>
@@ -151,21 +149,21 @@
 					</section>
 
 					<section data-transition='fade'>
-						<h2>Container Deployment: <div class="cwt-blue">Humans</div></h2>
+						<h2>Container Managment: <div class="cwt-blue">Humans</div></h2>
 						<blockquote>SSH into machines and run containers manually using Docker.</blockquote>
 						<p><strong>Pros: </strong> simple - minimal tooling, configuration and setup required</p>
 						<p><strong>Cons: </strong> not automated, error-prone, doesn't scale, problems require manual troubleshooting</p>
 					</section>
 
 					<section data-transition='fade'>
-						<h2>Container Deployment: <div class="cwt-blue">Scripts</div></h2>
+						<h2>Container Managment: <div class="cwt-blue">Scripts</div></h2>
 						<blockquote>Custom scripts or tools like Puppet & Chef to run containers on multiple machines</blockquote>
 						<div class='row'><strong>Pros: </strong> integrates with existing infrastructure, reproducible, auditable</div>
 						<div class='row'><strong>Cons: </strong> manual placement of containers on machines, still doesn't scale well, not easy to move to new infrastructure </div>
 					</section>
 
 					<section data-transition='fade'>
-						<h2>Container Deployment: <div class="cwt-blue">Orchestration</div></h2>
+						<h2>Container Managment: <div class="cwt-blue">Orchestration</div></h2>
 						<blockquote>Orchestrator takes care of running containers on machines which have spare capacity</blockquote>
 						<div class='row'><strong>Pros: </strong> automated, self-healing, scalable, portable</div>
 						<div class='row'><strong>Cons: </strong> some overhead, learning curve, new tooling</div>
@@ -200,11 +198,23 @@
 					</section>
 				</section>
 
-				<!-- <section>
+				<section>
 					<section>
-						
+						<h1>Using <strong>Kubernetes</strong></h1>
 					</section>
-				</section> -->
+					<section>
+						<h2><strong>Interacting</strong> with Kubernetes</h2>
+						<ul>
+							<li>GUI</li>
+							<li>Command-line</li>
+							<li>Code</li>
+						</ul>
+					</section>
+					<section>
+						<h2><strong>Using</strong> Kubernetes</h2>
+						<img src="img/kubectl.png">
+					</section>
+				</section>
 
 			</div>
 		</div>
