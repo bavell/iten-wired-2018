@@ -38,167 +38,272 @@
 				<section data-background-image='img/logo_final.png' data-background-size='contain' data-background-opacity='0.05'>
 					<h1><span class='cwt-blue'> Coastware Technologies</span></h1>
 					<ul>
-						<li>Founded in 2016, provides business-class software applications and comprehensive IT services</li>
+						<li>Founded in 2016, business-class software applications and comprehensive IT services</li>
+						<li>Adopted Kubenetes in early 2017, now managing all of Coastware's web services</li>
 						<li>Limited time & resources to spend on infrastructure</li>
-						<li>Adopted Kubenetes in early 2017, now managing all of Coastware's web services (60+ containers)</li>
 					</ul>
 
 					<aside class="notes">
-						<p>First a little background on myself and my company, Coastware Technologies.</p>
+						<p>At Coastware Technologies, we use Kubernetes and GCP to manage all of our infrastructure.</p>
+						<p>One of our specialties are custom business intranets. Each intranet involves multiple servers communicating with each other and a handful of supporting infrastructure like logging, monitoring and storage.</p>
 						<p>As the CEO, CTO and Lead Software Architect at Coastware Technologies, I need tools that let me utilize my available resources as efficiently as possible. Time is often the biggest limiting factor.</p>
 						<p>Kubernetes lets us solve infrastructure problems quickly, it provides a lot of power and flexibility out-of-the-box.</p>
 					</aside>
 				</section>
 
-				<section>
-					<section>
-						<h1>What is <span class="cwt-blue">Kubernetes</span>?</h1>
-						<blockquote>"Pilot/Helmsman" in Greek</blockquote>
-						<p>Initially built inside Google based on <strong>Borg and Omega</strong> - Google's internal systems that power search, video and advertising services</p>
-						<p>Set of <strong>tools, concepts and APIs</strong> designed to deploy, scale and maintain containers running on a cluster of machines</p>
-					</section>
-
-					<section>
-						<h2>Building Blocks: <span class='cwt-blue'>Containers</span></h2>
-						<blockquote>Containers are a great way to package and run applications.</blockquote>
-						<ul>
-							<li>Contains all libraries and code needed by application</li>
-							<li>Less overhead and lower start-up time than VMs</li>
-							<li>Easy to compose and replace</li>
-						</ul>
-					</section>
-
-					<section data-transition='fade'>
-						<h2>Problems <span class="cwt-blue">Kubernetes</span> aims to solve</h2>
-						<blockquote>Developer / Programmer</blockquote>
-						<ul>
-							<li class='fragment'>Applications and machines crash; the more you have the more often it will happen</li>
-							<li class='fragment'>Distributed systems are powerful and can solve many problems but are difficult to manage</li>
-							<li class="fragment">Homegrown infrastructure management solutions are often brittle and cumbersome</li>
-						</ul>
-						<aside class="notes">
-								<p>Developer problems</p>
-								<p>If an application crashes or fails for any reason, Kubernetes will automatically restart it. If the machine an application is running on crashes, Kubernetes will restart the application on another machine in the cluster.</p>
-								<p>K8s makes simple things easy and complicated things possible. It provides a set of concepts abstractions that are designed to simplify distributed system management.</p>
-								<p>K8s abstracts away the underlying infrastructure and provides a single HTTP API to manage it. Along with other benefits, this makes standardization easier and simplifies hiring and training.</p>
-							</aside>
-					</section>
-
-					<section data-transition='fade'>
-						<h2>Problems <span class="cwt-blue">Kubernetes</span> aims to solve</h2>
-						<blockquote>IT Technician / System Administrator</blockquote>
-						<ul>
-							<li class='fragment'>Scaling infrastructure can be a slow, error-prone and manual process</li>
-							<li class='fragment'>Staff needs to be on-call 24/7 to respond to inevitable crisis at 3am</li>
-							<li class='fragment'>Legacy infrastructure and applications can't be modified in-place<br/></li>
-						</ul>
-						<aside class="notes">
-							Whats are some problems faced in operations that Kubernetes helps solve?
-
-						</aside>
-					</section>
-
-					<section data-transition='fade'>
-						<h2>Problems <span class="cwt-blue">Kubernetes</span> aims to solve</h2>
-						<blockquote>Manager / Team Lead / Executive</blockquote>
-						<ul>
-							<li class='fragment'>Hiring and training staff on homegrown infrastructure is difficult and expensive</li>
-						</ul>
-						<aside class="notes">
-							Business problems // 
-						</aside>
-					</section>
-
-					<section>
-						<h1>Why Kubernetes?</h1>
-						<p class='fragment'><strong>Wide industry adoption:</strong> Comcast, IBM, Ebay, Phillips</p>
-						<p class='fragment'><strong>Huge Community:</strong> 1800+ contributors and 40k+ stars on GitHub</p>
-						<p class='fragment'>Use a <strong>single API</strong> to manage your infrastructure regardless of physical location (on-prem, co-located, cloud provider)</p>
-
-						<aside class="notes">
-							What are some reasons Kubernetes stands apart from other solutions?
-						</aside>
-					</section>
-
-					<section>
-						<h2><span class="cwt-blue">Kubernetes</span> Use Case Examples</h2>
-						<ul>
-							<li class='fragment'>Make sure an application is <strong>always available</strong></li>
-							<li class='fragment'>Simultaneously run <strong>multiple versions</strong> of an application and <strong>multiple copies</strong> of each version</li>
-							<li class='fragment'>Scale an application <strong>automatically</strong> based on load</li>
-						</ul>
-						<aside class="notes">
-							Cluster admin can tell k8s to run N replicas behind a load balancer. Each replica can be geographically distributed for maximum availability.
-							
-							Perform QA on new versions of an application while the previous version is running and serving clients.
-	
-							Kubernetes can automatically scale an application based on CPU usage or the amount of traffic it receives.
-						</aside>
-					</section>
+				<section  data-background-image='img/k8s_logo.png' data-background-size='contain' data-background-opacity='0.05'>
+					<h1>What is <span class="cwt-blue">Kubernetes</span>?</h1>
+					<blockquote>"Pilot/Helmsman" in Greek</blockquote>
+					<p>Initially built inside Google based on <strong>Borg and Omega</strong> - Google's internal systems that power search, video and advertising services</p>
+					<p>Set of <strong>tools, concepts and APIs</strong> designed to deploy, scale and maintain containers running on a cluster of machines</p>
 				</section>
 
 				<section>
-					<section data-transition='fade'>
-						<h2>Building Blocks: <span class="cwt-blue">Deployment</span></h2>
-						<blockquote>Once we have our application packaged up into a container, how do we run it?</blockquote>
-						<ul>
-							<li class='fragment'>Option 1: Manual - Humans</li>
-							<li class='fragment'>Option 2: Automated - Scripts</li>
-							<li class='fragment'>Option 3: Automated - Orchestration Tool</li>
-						</ul>
-					</section>
-
-					<section data-transition='fade'>
-						<h2>Container Managment: <div class="cwt-blue">Humans</div></h2>
-						<blockquote>SSH into machines and run containers manually using Docker.</blockquote>
-						<p><strong>Pros: </strong> simple - minimal tooling, configuration and setup required</p>
-						<p><strong>Cons: </strong> not automated, error-prone, doesn't scale, problems require manual troubleshooting</p>
-					</section>
-
-					<section data-transition='fade'>
-						<h2>Container Managment: <div class="cwt-blue">Scripts</div></h2>
-						<blockquote>Custom scripts or tools like Puppet & Chef to run containers on multiple machines</blockquote>
-						<div class='row'><strong>Pros: </strong> integrates with existing infrastructure, reproducible, auditable</div>
-						<div class='row'><strong>Cons: </strong> manual placement of containers on machines, still doesn't scale well, not easy to move to new infrastructure </div>
-					</section>
-
-					<section data-transition='fade'>
-						<h2>Container Managment: <div class="cwt-blue">Orchestration</div></h2>
-						<blockquote>Orchestrator takes care of running containers on machines which have spare capacity</blockquote>
-						<div class='row'><strong>Pros: </strong> automated, self-healing, scalable, portable</div>
-						<div class='row'><strong>Cons: </strong> some overhead, learning curve, new tooling</div>
-					</section>
+					<h2>Building Blocks: <span class='cwt-blue'>Containers</span></h2>
+					<ul>
+						<li>Contains all libraries and code needed by application</li>
+						<li>Less overhead and lower start-up time than VMs</li>
+						<li>Easy to compose and replace</li>
+					</ul>
+					<aside class="notes">
+						<p>2014: Google launches over 2 billion containers a week, runs everything in containers</p>
+						<p>More encapsulation than VMs</p>
+						<p>Can be swapped out with another that has same inputs and outputs</p>
+					</aside>
 				</section>
 
 				<section>
-					<section>
-						<h2>Building Blocks: <span class='cwt-blue'>Orchestrators</span></h2>
-						<blockquote>Kubernetes, DC/OS, Nomad, etc</blockquote>
-						<div class='skinny'>
-							<div class='left fragment'>
-								<p><strong>Scheduling:</strong> match containers to machines</p>
-								<small><ul>
-									<li>by resource needs (CPU, Memory)</li>
-									<li>by affinity requirements (put X near Y)</li>
-									<li>by labels (put X on a "test" machine)</li>
-								</ul></small>
-							</div>
-							<p class='left fragment'><strong>Replication:</strong> run N copies</p>
-							<p class='left fragment'><strong>Recovery:</strong> handle machine failures</p>
-							<p class='left fragment'><strong>Discovery:</strong> find service X</p>
+					<div class='split'>
+						<div class='stack'><h4>VMs</h4><img src="img/vm.png"></div>
+						<div class='stack'><h4>Containers</h4><img src="img/containers.png"></div>
+					</div>
+				</section>
+
+				<section data-transition='fade'>
+					<h2>Problems where <span class="cwt-blue">Kubernetes</span> can help</h2>
+					<blockquote>Developer / Programmer</blockquote>
+					<ul>
+						<li>Applications and machines crash; the more you have the more often it will happen</li>
+						<li>Distributed systems are powerful and can solve many problems but are difficult to manage</li>
+						<li>Existing infrastructure is limited in features or guarantees<br/></li>
+					</ul>
+					<aside class="notes">
+						<p>If an application crashes or fails for any reason, k8s will automatically restart it. If the machine an application is running on crashes, k8s will restart the application on another machine in the cluster.</p>
+						<p>K8s provides a set of concepts and abstractions that are designed to simplify distributed system management.</p>
+						<p>K8s abstracts away the underlying infrastructure and provides a single HTTP API to manage it.</p>
+					</aside>
+				</section>
+
+				<section data-transition='fade'>
+					<h2>Problems where <span class="cwt-blue">Kubernetes</span> can help</h2>
+					<blockquote>Ops / System Administrator</blockquote>
+					<ul>
+						<li>Scaling infrastructure can be a slow, error-prone and manual process</li>
+						<li>Staff need to be on-call 24/7 to respond to inevitable crisis at 3am</li>
+						<li>Existing infrastructure is brittle and cumbersome</li>
+					</ul>
+					<aside class="notes">
+						<p>Problems in scaling infra reduced to matter of setting up hardware and k8s components</p>
+						<p>k8s self-heals and reduces need for manual intervention</p>
+						<p>Stability and features of k8s relied upon by many companies. You get to benefit from all the man-hours put in by others.</p>
+					</aside>
+				</section>
+
+				<section data-transition='fade'>
+					<h2>Problems where <span class="cwt-blue">Kubernetes</span> can help</h2>
+					<blockquote>Manager / Team Lead / Executive</blockquote>
+					<ul>
+						<li>Hiring and training staff on homegrown infrastructure is difficult and expensive</li>
+						<li>More engineers and technicians are needed to manage ever-growing infrastructure</li>
+						<li>Brittle infrastructure increases risk of mistakes, errors and oversights</li>
+					</ul>
+					<aside class="notes">
+						What business problems does Kubernetes help solve?
+					</aside>
+				</section>
+
+				<section>
+					<h1>Why Kubernetes?</h1>
+					<p class='left fragment'><strong>Strong community:</strong> 1800+ contributors, used by F500 companies and startups alike</p>
+					<p class='left fragment'><strong>Runs everywhere:</strong> Public cloud, private cloud, bare metal, laptop</p>
+					<p class="left fragment"><strong>Batteries included: </strong> Lots of functionality out-of-the-box</p>
+					<aside class="notes">
+						What are some reasons Kubernetes stands apart from other solutions?
+					</aside>
+				</section>
+
+				<section data-transition='fade'>
+					<h2>Building Blocks: <span class="cwt-blue">Deployment</span></h2>
+					<blockquote>Our application is packaged up into a container<br/>How do we run, update and scale it?</blockquote>
+					<ul>
+						<li class='fragment'>Manual - Humans</li>
+						<li class='fragment'>Automated - Scripts</li>
+						<li class='fragment'>Automated - Orchestrator</li>
+					</ul>
+				</section>
+
+				<section data-transition='fade'>
+					<h2>Container Managment: <div class="cwt-blue">Humans</div></h2>
+					<!-- <blockquote>SSH into machines and run containers manually using Docker.</blockquote> -->
+					<p><strong>Pros: </strong> simple - minimal tooling, configuration and setup required</p>
+					<p><strong>Cons: </strong> not automated, error-prone, doesn't scale, problems require manual troubleshooting</p>
+					<aside class="notes">
+						<p>Good for low system complexity and lax operational requirements</p>
+					</aside>
+				</section>
+
+				<section data-transition='fade'>
+					<h2>Container Managment: <div class="cwt-blue">Scripts</div></h2>
+					<!-- <blockquote>Custom scripts or tools like Puppet & Chef to run containers on multiple machines</blockquote> -->
+					<div class='row'><strong>Pros: </strong> integrates with existing infrastructure, reproducible, auditable</div>
+					<div class='row'><strong>Cons: </strong> manual placement of containers on machines, becomes unmanageable for larger systems</div>
+					<aside class="notes">
+						<p>Good for moderate system complexity</p>
+					</aside>
+				</section>
+
+				<section data-transition='fade'>
+					<h2>Container Managment: <div class="cwt-blue">Orchestration</div></h2>
+					<br/>
+					<!-- <blockquote>Orchestrator takes care of running containers on machines which have spare capacity</blockquote> -->
+					<div class='row'><strong>Pros: </strong> automated, self-healing, scalable, portable</div>
+					<div class='row'><strong>Cons: </strong> some overhead, learning curve, new tooling</div>
+					<aside class="notes">
+						<p>Good for high system complexity</p>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Building Blocks: <span class='cwt-blue'>Orchestrators</span></h2>
+					<div class='skinny'>
+						<div class='left fragment'>
+							<p><strong>Scheduling:</strong> match containers to machines</p>
+							<small><ul>
+								<li>by resource needs (CPU, Memory)</li>
+								<li>by affinity requirements (put X near Y)</li>
+								<li>by labels (put X on a "test" machine)</li>
+							</ul></small>
 						</div>
-					</section>
-
-					<section>
-						<h2>Building Blocks: <span class='cwt-blue'>Orchestrators</span></h2>
-						<p class="fragment">Load-balancing</p>
-						<p class="fragment">Auto-scaling of cluster and applications</p>
-						<p class="fragment">Storage provisioning</p>
-						<p class="fragment">Configuration and Secrets management</p>
-					</section>
+						<p class='left fragment'><strong>Replication:</strong> run N copies</p>
+						<p class='left fragment'><strong>Recovery:</strong> handle machine failures</p>
+					</div>
 				</section>
 
 				<section>
+					<h1>Kubernetes Architecture</h1>
+				</section>
+
+				<section>
+					<h2>Nodes</h2>
+					<blockquote>Machine running Kubernetes</blockquote>
+					<img src="img/node_architecture.png"/>
+					<aside class="notes">
+						<p>Can run on VM or bare metal</p>
+						<p>Two types of nodes: Master and Worker</p>
+						<p>Master - runs API server, scheduler, distributed database</p>
+						<p>Worker - runs minimal k8s binary and containers</p>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Cluster</h2>
+					<blockquote>Group of cooperating nodes</blockquote>
+					<!-- <img src="img/node_architecture.png"/> -->
+					<aside class="notes">
+						<p>Cluster aggregates compute and storage capacity</p>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Pods</h2>
+					<blockquote>Group of cooperating containers</blockquote>
+					<pre><code class='language-yaml' style='line-height:1em;' data-trim data-noescape>
+					kind: Pod
+					metadata:
+					  name: my-website-1
+					  labels:
+					    app: my-website
+					spec:
+					  containers:
+					  - name: webserver
+					    image: my-website-v1.0
+					    ports:
+					    - containerPort: 80
+					</code></pre>
+					<!-- <img src="img/pod_architecture.png"/> -->
+					<aside class="notes">
+						<p>Abstraction of multiple cooperating processes which form a cohesive unit of service</p>
+						<p>Share network and process space</p>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Deployment</h2>
+					<blockquote>Manages the lifecycle of a group of pods</blockquote>
+					<pre><code class='language-yaml' style='line-height:1em;' data-trim data-noescape>
+					kind: Deployment
+					metadata:
+					  name: my-website
+					spec:
+					  replicas: 3
+					  selector:
+					    matchLabels:
+					      app: my-website
+					  template:
+					    metadata:
+					      labels:
+					        app: my-website
+					    spec:
+					      containers:
+					      - name: webserver
+					        image: my-website-v1.0
+					        ports:
+					        - containerPort: 80
+					</code></pre>
+					<aside class="notes">
+						<p>You describe desired state, deployment controller drives current state toward desired state</p>
+
+					</aside>
+				</section>
+
+				<section>
+					<h2>Service</h2>
+					<blockquote>A service forwards traffic to a group of pods</blockquote>
+					<pre><code class='language-yaml' style='line-height:1em;' data-trim data-noescape>
+					kind: Service
+					metadata:
+					  name: my-website
+					spec:
+					  selector:
+					    app: my-website
+					  ports:
+					  - name: http
+					    port: 8000
+					    targetPort: 80
+					</code></pre>
+					<aside class="notes">
+						<p>Gives DNS name to group of pods</p>
+						<p>Used for inter-pod communication</p>
+					</aside>
+				</section>
+
+				<!-- <section>
+					<h2><span class="cwt-blue">Kubernetes</span> Use Case Examples</h2>
+					<ul>
+						<li class='fragment'>Make sure an application is <strong>always available</strong></li>
+						<li class='fragment'>Simultaneously run <strong>multiple versions</strong> of an application and <strong>multiple copies</strong> of each version</li>
+						<li class='fragment'>Scale an application <strong>automatically</strong> based on load</li>
+					</ul>
+					<aside class="notes">
+						Cluster admin can tell k8s to run N replicas behind a load balancer. Each replica can be geographically distributed for maximum availability.
+						
+						Perform QA on new versions of an application while the previous version is running and serving clients.
+
+						Kubernetes can automatically scale an application based on CPU usage or the amount of traffic it receives.
+					</aside>
+				</section> -->
+
+				<!-- <section>
 					<section>
 						<h1>Using <strong>Kubernetes</strong></h1>
 					</section>
@@ -214,7 +319,7 @@
 						<h2><strong>Using</strong> Kubernetes</h2>
 						<img src="img/kubectl.png">
 					</section>
-				</section>
+				</section> -->
 
 			</div>
 		</div>
@@ -228,8 +333,8 @@
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
 				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
+					// { src: 'plugin/markdown/marked.js' },
+					// { src: 'plugin/markdown/markdown.js' },
 					{ src: 'plugin/notes/notes.js', async: true },
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
 				]

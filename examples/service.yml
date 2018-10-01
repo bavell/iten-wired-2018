@@ -1,0 +1,10 @@
+kind: Service
+metadata:
+  name: my-website
+spec:
+  selector:
+    app: my-website
+  ports:
+  - name: http
+    port: 8000
+    targetPort: 80

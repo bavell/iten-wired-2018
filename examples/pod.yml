@@ -1,0 +1,9 @@
+kind: Pod
+metadata:
+  name: my-website-1
+spec:
+  containers:
+  - name: webserver
+    image: my-website-v1.0
+    ports:
+    - containerPort: 80

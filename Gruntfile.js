@@ -1,6 +1,6 @@
 /* global module:false */
 module.exports = function(grunt) {
-	var port = grunt.option('port') || 8000;
+	var port = grunt.option('port') || 8888;
 	var root = grunt.option('root') || '.';
 
 	if (!Array.isArray(root)) root = [root];
@@ -94,11 +94,12 @@ module.exports = function(grunt) {
 		connect: {
 			server: {
 				options: {
+					hostname: '*',
 					port: port,
 					base: root,
-					livereload: true,
-					open: true,
-					useAvailablePort: true
+					livereload: false,
+					open: false,
+					useAvailablePort: false
 				}
 			}
 		},
