@@ -38,7 +38,7 @@
 				<section data-background-image='img/logo_final.png' data-background-size='contain' data-background-opacity='0.05'>
 					<h1><span class='cwt-blue'> Coastware Technologies</span></h1>
 					<ul>
-						<li>Founded in 2016, business-class software applications and comprehensive IT services</li>
+						<li>Business-class software applications and comprehensive IT services</li>
 						<li>Adopted Kubenetes in early 2017, now managing all of Coastware's web services</li>
 						<li>Limited time & resources to spend on infrastructure</li>
 					</ul>
@@ -79,49 +79,6 @@
 					</div>
 				</section>
 
-				<section data-transition='fade'>
-					<h2>Problems where <span class="cwt-blue">Kubernetes</span> can help</h2>
-					<blockquote>Developer / Programmer</blockquote>
-					<ul>
-						<li>Applications and machines crash; the more you have the more often it will happen</li>
-						<li>Distributed systems are powerful and can solve many problems but are difficult to manage</li>
-						<li>Existing infrastructure is limited in features or guarantees<br/></li>
-					</ul>
-					<aside class="notes">
-						<p>If an application crashes or fails for any reason, k8s will automatically restart it. If the machine an application is running on crashes, k8s will restart the application on another machine in the cluster.</p>
-						<p>K8s provides a set of concepts and abstractions that are designed to simplify distributed system management.</p>
-						<p>K8s abstracts away the underlying infrastructure and provides a single HTTP API to manage it.</p>
-					</aside>
-				</section>
-
-				<section data-transition='fade'>
-					<h2>Problems where <span class="cwt-blue">Kubernetes</span> can help</h2>
-					<blockquote>Ops / System Administrator</blockquote>
-					<ul>
-						<li>Scaling infrastructure can be a slow, error-prone and manual process</li>
-						<li>Staff need to be on-call 24/7 to respond to inevitable crisis at 3am</li>
-						<li>Existing infrastructure is brittle and cumbersome</li>
-					</ul>
-					<aside class="notes">
-						<p>Problems in scaling infra reduced to matter of setting up hardware and k8s components</p>
-						<p>k8s self-heals and reduces need for manual intervention</p>
-						<p>Stability and features of k8s relied upon by many companies. You get to benefit from all the man-hours put in by others.</p>
-					</aside>
-				</section>
-
-				<section data-transition='fade'>
-					<h2>Problems where <span class="cwt-blue">Kubernetes</span> can help</h2>
-					<blockquote>Manager / Team Lead / Executive</blockquote>
-					<ul>
-						<li>Hiring and training staff on homegrown infrastructure is difficult and expensive</li>
-						<li>More engineers and technicians are needed to manage ever-growing infrastructure</li>
-						<li>Brittle infrastructure increases risk of mistakes, errors and oversights</li>
-					</ul>
-					<aside class="notes">
-						What business problems does Kubernetes help solve?
-					</aside>
-				</section>
-
 				<section>
 					<h1>Why Kubernetes?</h1>
 					<p class='left fragment'><strong>Strong community:</strong> 1800+ contributors, used by F500 companies and startups alike</p>
@@ -129,6 +86,39 @@
 					<p class="left fragment"><strong>Batteries included: </strong> Lots of functionality out-of-the-box</p>
 					<aside class="notes">
 						What are some reasons Kubernetes stands apart from other solutions?
+					</aside>
+				</section>
+
+				<section>
+						<h1>Problems where <span class="cwt-blue">Kubernetes</span> can help</h1>
+				</section>
+
+				<section data-transition='fade'>
+					<h2>Operations</h2>
+					<ul>
+						<li class='fragment'><strong>Applications and machines crash</strong> - the more you have the more often it will happen</li>
+						<li class='fragment'>Scaling infrastructure can be a <strong>slow, error-prone and manual process</strong></li>
+						<li class='fragment'>Staff need to be on-call 24/7 to respond to <strong>inevitable crisis at 3am</strong></li>
+						<li class='fragment'>Existing infrastructure is <strong>brittle and cumbersome</strong> or <strong>limited in features or guarantees</strong></li>
+					</ul>
+					<aside class="notes">
+						<p>k8s self-heals and reduces need for manual intervention</p>
+						<p>Stability and features of k8s relied upon by many companies. You get to benefit from all the man-hours put in by others.</p>
+						<p>If an application crashes or fails for any reason, k8s will automatically restart it. If the machine an application is running on crashes, k8s will restart the application on another machine in the cluster.</p>
+						<p>K8s provides a set of concepts and abstractions that are designed to simplify distributed system management.</p>
+						<p>K8s abstracts away the underlying infrastructure and provides a single HTTP API to manage it.</p>
+					</aside>
+				</section>
+
+				<section data-transition='fade'>
+					<h2>Business</h2>
+					<ul>
+						<li class='fragment'>Hiring and training staff on bespoke infrastructure can be <strong>difficult and expensive</strong></li>
+						<li class='fragment'>More personnel are needed to manage <strong>ever-growing infrastructure</strong></li>
+						<li class='fragment'>Brittle infrastructure increases <strong>risk of mistakes, errors and oversights</strong></li>
+					</ul>
+					<aside class="notes">
+						What business problems does Kubernetes help solve?
 					</aside>
 				</section>
 
@@ -143,7 +133,7 @@
 				</section>
 
 				<section data-transition='fade'>
-					<h2>Container Managment: <div class="cwt-blue">Humans</div></h2>
+					<h2>Deployment: <span class="cwt-blue">Humans</span></h2>
 					<!-- <blockquote>SSH into machines and run containers manually using Docker.</blockquote> -->
 					<p><strong>Pros: </strong> simple - minimal tooling, configuration and setup required</p>
 					<p><strong>Cons: </strong> not automated, error-prone, doesn't scale, problems require manual troubleshooting</p>
@@ -153,7 +143,7 @@
 				</section>
 
 				<section data-transition='fade'>
-					<h2>Container Managment: <div class="cwt-blue">Scripts</div></h2>
+					<h2>Deployment: <span class="cwt-blue">Scripts</span></h2>
 					<!-- <blockquote>Custom scripts or tools like Puppet & Chef to run containers on multiple machines</blockquote> -->
 					<div class='row'><strong>Pros: </strong> integrates with existing infrastructure, reproducible, auditable</div>
 					<div class='row'><strong>Cons: </strong> manual placement of containers on machines, becomes unmanageable for larger systems</div>
@@ -163,8 +153,7 @@
 				</section>
 
 				<section data-transition='fade'>
-					<h2>Container Managment: <div class="cwt-blue">Orchestration</div></h2>
-					<br/>
+					<h2>Deployment: <span class="cwt-blue">Orchestration</span></h2>
 					<!-- <blockquote>Orchestrator takes care of running containers on machines which have spare capacity</blockquote> -->
 					<div class='row'><strong>Pros: </strong> automated, self-healing, scalable, portable</div>
 					<div class='row'><strong>Cons: </strong> some overhead, learning curve, new tooling</div>
@@ -176,7 +165,7 @@
 				<section>
 					<h2>Building Blocks: <span class='cwt-blue'>Orchestrators</span></h2>
 					<div class='skinny'>
-						<div class='left fragment'>
+						<div class='left'>
 							<p><strong>Scheduling:</strong> match containers to machines</p>
 							<small><ul>
 								<li>by resource needs (CPU, Memory)</li>
@@ -184,13 +173,13 @@
 								<li>by labels (put X on a "test" machine)</li>
 							</ul></small>
 						</div>
-						<p class='left fragment'><strong>Replication:</strong> run N copies</p>
-						<p class='left fragment'><strong>Recovery:</strong> handle machine failures</p>
+						<p class='left'><strong>Replication:</strong> run N copies</p>
+						<p class='left'><strong>Recovery:</strong> handle machine failures</p>
 					</div>
 				</section>
 
 				<section>
-					<h1>Kubernetes Architecture</h1>
+					<h1>Kubernetes Concepts</h1>
 				</section>
 
 				<section>
@@ -202,15 +191,6 @@
 						<p>Two types of nodes: Master and Worker</p>
 						<p>Master - runs API server, scheduler, distributed database</p>
 						<p>Worker - runs minimal k8s binary and containers</p>
-					</aside>
-				</section>
-
-				<section>
-					<h2>Cluster</h2>
-					<blockquote>Group of cooperating nodes</blockquote>
-					<!-- <img src="img/node_architecture.png"/> -->
-					<aside class="notes">
-						<p>Cluster aggregates compute and storage capacity</p>
 					</aside>
 				</section>
 
@@ -287,6 +267,76 @@
 					</aside>
 				</section>
 
+				<section>
+					<h1>Labels & Selectors</h1>
+				</section>
+
+				<section>
+					<h2>Labels</h2>
+					<div class="split">
+						<ul>
+							<li>Arbitrary metadata</li>
+							<li>Attached to any API object</li>
+							<li>Used to represent identity</li>
+							<li>Queryable by Selectors</li>
+							<li>The <strong>only</strong> grouping mechanism</li>
+						</ul>
+						<div>
+							<p class="left" style='margin:0'>app=my-app</p>
+							<p class="left" style='margin:0'>role=frontend</p>
+							<p class="left" style='margin:0'>role=backend</p>
+							<p class="left" style='margin:0'>stage=prod</p>
+							<p class="left" style='margin:0'>stage=dev</p>
+						</div>
+					</div>
+				</section>
+					
+				<section>
+					<h2>Selectors</h2>
+					<div class="split">
+						<ul>
+							<li class="fragment fade-in-then-semi-out" data-selector='my-app'>app=my-app</li>
+							<li class="fragment fade-in-then-semi-out" data-selector='frontend'>role=front-end</li>
+							<li class="fragment fade-in-then-semi-out" data-selector='backend'>role=back-end</li>
+							<li class="fragment fade-in-then-semi-out" data-selector='prod'>stage=prod</li>
+							<li class="fragment fade-in-then-semi-out" data-selector='dev'>stage=dev</li>
+						</ul>
+						<div class='pods'>
+							<div class="pod my-app frontend prod">
+								<div>app=my-app</div>
+								<div>role=frontend</div>
+								<div>stage=prod</div>
+							</div>
+							<div class="pod my-app frontend dev">
+								<div>app=my-app</div>
+								<div>role=frontend</div>
+								<div>stage=dev</div>
+							</div>
+							<div class="pod my-app backend prod">
+								<div>app=my-app</div>
+								<div>role=backend</div>
+								<div>stage=prod</div>
+							</div>
+							<div class="pod my-app backend dev">
+								<div>app=my-app</div>
+								<div>role=backend</div>
+								<div>stage=dev</div>
+							</div>
+							
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h1>Additional Resources</h1>
+					<ul>
+						<li>Official Website: <a href="https://kubernetes.io">kubernetes.io</a></li>
+						<li>Examples: <a href="https://kubernetesbyexample.com">kubernetesbyexample.com</a></li>
+						<li>Education/Training: <a href="https://coastware.tech">coastware.tech</a></li>
+					</ul>
+				</section>
+
+
 				<!-- <section>
 					<h2><span class="cwt-blue">Kubernetes</span> Use Case Examples</h2>
 					<ul>
@@ -339,6 +389,21 @@
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
 				]
 			});
+			Reveal.addEventListener( 'fragmentshown', function( event ) {
+				try {
+						var type = event.fragment.getAttribute('data-selector')
+						var pods = document.querySelectorAll('.pod')
+						var selected = document.querySelectorAll('.pod.'+type)
+						console.log(pods.length, selected.length);
+						for (var i=0;i<pods.length;i++) {
+							pods[i].classList.remove('selected')
+						}
+						for (var i=0;i<selected.length;i++) {
+							selected[i].classList.add('selected')
+						}
+				}
+				catch(e) {}
+			} );
 		</script>
 	</body>
 </html>

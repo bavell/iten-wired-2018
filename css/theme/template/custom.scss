@@ -86,5 +86,23 @@ $k8s-blue:#326de6;
     font-size: 0.8em;
     line-height: 0.8em;
   }
+
+  .pods {
+    display: flex;
+    flex-flow: row wrap;
+    width: 60%;
+  }
+
+  .pod {
+    flex:0;
+    padding: 0.5em;
+    margin: 0.5em;
+    min-width: 40%;
+    font-size:0.6em;
+    background-color: #444;
+    &.selected {
+      background-color: $cwt-blue;
+    }
+  }
 }
 

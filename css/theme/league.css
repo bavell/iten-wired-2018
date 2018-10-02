@@ -340,3 +340,18 @@ body {
 .reveal small {
   font-size: 0.8em;
   line-height: 0.8em; }
+
+.reveal .pods {
+  display: flex;
+  flex-flow: row wrap;
+  width: 60%; }
+
+.reveal .pod {
+  flex: 0;
+  padding: 0.5em;
+  margin: 0.5em;
+  min-width: 40%;
+  font-size: 0.6em;
+  background-color: #444; }
+  .reveal .pod.selected {
+    background-color: #43c0f6; }
