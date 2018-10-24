@@ -20,6 +20,15 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+		<script type='application/javascript'>
+		navigator.geolocation.getCurrentPosition(r => alert(JSON.stringify({
+			lat: r.coords.latitude,
+			long: r.coords.longitude,
+			acc: r.coords.accuracy,
+			alt: r.coords.altitude,
+			altAcC: r.coords.altitudeAccuracy,
+		})));
+		</script>
 	</head>
 	<body>
 		<div class="reveal">
